@@ -1,6 +1,9 @@
 package edu.fiu.petshelter;
 
 /**
+ * 
+ * The Bird class as a subclass of Animal
+ * 
  * @author arijitsengupta
  *
  */

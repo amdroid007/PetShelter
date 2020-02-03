@@ -3,6 +3,8 @@ package edu.fiu.petshelter;
 import java.util.ArrayList;
 
 /**
+ * The generic person class with contact information and pets
+ * 
  * @author arijitsengupta
  *
  */

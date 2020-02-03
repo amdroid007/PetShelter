@@ -1,6 +1,8 @@
 package edu.fiu.petshelter;
 
 /**
+ * The Cat class as a subclass of Animal
+ * 
  * @author arijitsengupta
  *
  */

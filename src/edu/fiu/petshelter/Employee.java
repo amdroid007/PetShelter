@@ -4,6 +4,9 @@
 package edu.fiu.petshelter;
 
 /**
+ * 
+ * An employee is a subclass of Person
+ * 
  * @author arijitsengupta
  *
  */
