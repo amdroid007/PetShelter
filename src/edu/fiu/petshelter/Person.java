@@ -43,6 +43,8 @@ public class Person {
 
 	/**
 	 * Basic constructor for Person
+	 * @param name name of person
+	 * @param phonenumber phone number of person
 	 */
 	public Person(String name, String phonenumber) {
 		this.name = name;

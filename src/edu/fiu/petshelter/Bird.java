@@ -8,9 +8,12 @@ public class Bird extends Animal {
 	private int wingspan;
 
 	/**
-	 * @param name
-	 * @param age
-	 * @param color
+	 * Constructor for bird
+	 * 
+	 * @param name name of bird
+	 * @param age  age of bird
+	 * @param color color of bird
+	 * @param wingspan wingspan of bird
 	 */
 	public Bird(String name, int age, String color, int wingspan) {
 		super(name, age, color);
