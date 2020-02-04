@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"petshelter"}]
+moduleSearchIndex = [{"l":"edu.fiu.petshelter"}]

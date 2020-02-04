@@ -20,6 +20,30 @@ public class Shelter {
 	private Hashtable<String,Employee> employees;
 
 	/**
+	 * Get the number of available animals
+	 * @return the number of animals
+	 */
+	public int numAnimals() {
+		return animals.size();
+	}
+
+	/**
+	 * Find an animal by name
+	 * @param name name of animal to find
+	 * @return the Animal with that name
+	 */
+	public Animal findAnimal(String name) {
+		return animals.get(name);
+	}
+
+	/**
+	 * Have all animals in the shelter make their sounds
+	 */
+	public void chorus() {
+		animals.values().forEach((a) -> a.makeSound());	
+	}
+
+	/**
 	 * @return the name
 	 */
 	public String getName() {
@@ -78,42 +102,11 @@ public class Shelter {
 		this.employees = new Hashtable<String,Employee>();
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("The shelter story.");
-		
-		// Create a new Shelter
-		Shelter myShelter = new Shelter("Jit's Shelter", "Miami", "111-2222");
-		System.out.println(myShelter);
-
-		// Hire some people
-		System.out.println("\nBuilding the team..");
-		myShelter.hire(new Employee("John", "555-1212", "owner", "john@shelter.org"));
-		myShelter.hire(new Employee("Shiela", "555-3434", "admin", "shiela@shelter.org"));
-		
-		
-		// Receive some animals
-		System.out.println("\nWe are getting some animals!");
-		myShelter.receive(new Dog("Bob", 24, "brown"), myShelter.employees.get("John"));
-		myShelter.receive(new Cat("Roxie", 5, "tabbie"), myShelter.employees.get("Shiela"));
-		myShelter.receive(new Bird("Coco", 2, "red", 3), myShelter.employees.get("Shiela"));
-		
-		// Let all animals go crazy
-		System.out.println("\nAnimals are making a big ruccus!");
-		myShelter.animals.values().forEach((a) -> a.makeSound());
-		
-		System.out.println("");
-		Person joe = new Person("Joe", "123-456-78");
-		myShelter.processAdoption(joe, myShelter.animals.get("Bob"));
-		
-		System.out.println("Now we have " + myShelter.animals.size() + " animals left.");
-	}
-
 	/**
 	 * Hire an employee into the shelter
 	 * @param employee the employee we are hiring
 	 */
-	private void hire(Employee employee) {
+	public void hire(Employee employee) {
 		employees.put(employee.getName(), employee);
 		System.out.println(employee.getName() + " joined " 
 				+ getName() + " as " + employee.getPosition());
@@ -125,7 +118,7 @@ public class Shelter {
 	 * @param adopter the person who is adopting the animal
 	 * @param adoptee the animal that is getting adopted
 	 */
-	private void processAdoption(Person adopter, Animal adoptee) {
+	public void processAdoption(Person adopter, Animal adoptee) {
 		Animal processedAnimal = animals.remove(adoptee.getName());
 		adopter.adopt(processedAnimal);		
 		System.out.println(adopter + " adopted " + adoptee);
